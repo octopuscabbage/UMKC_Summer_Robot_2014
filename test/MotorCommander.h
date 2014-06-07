@@ -51,7 +51,6 @@ class MotorCommander{
 		void turnRight(){
 			turn(Motors::RIGHT);
 		}
-		//Supply the speed of the forward direction you want, for example turnRight(speed.foward.full);
 		void turnRight(int angle){
 			turn(Motors::RIGHT, angle);
 		}
@@ -61,5 +60,11 @@ class MotorCommander{
 		void turnLeft(int angle){
 			turn(Motors::LEFT,angle);
 		}
+                int readRight(){
+                      return right.read();
+                }
+                int readLeft(){
+                      return left.read();
+                }
 };
 #endif

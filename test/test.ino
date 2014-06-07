@@ -7,11 +7,13 @@ MotorCommander mcommand();
 void setup()
 {
 	Serial.begin(9600);
+        
 }
-void loop();
+void loop(){
 	//("wasd for fps movement, q for stop)
 	char input = Serial.read();
-	switch(input){
+	
+        switch(input){
 		case 'w':
 			mcommand.goForward();
 			break;
@@ -25,7 +27,7 @@ void loop();
 			mcommand.goBackward();
 			break;
 		case 'q':
-			mcommand.stop()
+			mcommand.stop();
 			break;
 	}
 }
