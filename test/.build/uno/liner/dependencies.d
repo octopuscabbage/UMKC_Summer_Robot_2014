@@ -1,6 +1,5 @@
 .build/uno/liner/MotorCommander.d .build/uno/liner/MotorCommander.o: lib/liner/MotorCommander.cpp lib/liner/MotorCommander.h \
  /usr/share/arduino/libraries/Servo/Servo.h \
- lib/elapsedMillis-master/elapsedMillis.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/WCharacter.h \
