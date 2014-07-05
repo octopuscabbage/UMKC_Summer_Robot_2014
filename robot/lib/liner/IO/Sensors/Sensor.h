@@ -7,7 +7,7 @@ class Sensor{
 public:
 	//C++ is fun
 	void init(int pin, int acuity);
-	//Reads the sensor and determines wether the reading is above hte acuity
+	//Reads the sensor and determines whether the reading is above the acuity
 	bool read();
 	//Returns the last reading without recalculating
 	bool lastReading;

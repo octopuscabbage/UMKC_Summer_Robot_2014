@@ -3,11 +3,14 @@
  */
 
 
-#include "motor_cmd.h"
+#include "MotorCommander.h"
+#include "SensorArray.h"
 
 #ifndef IO_H
 #define IO_H
 
 struct IO{
-	motor_cmd MotorCommand;
+	MotorCommander motorCommander;
+	SensorArray sensorArray;
+	
 }

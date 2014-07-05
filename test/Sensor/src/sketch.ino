@@ -1,5 +1,8 @@
+#include "SensorArray.h"
 
-int val = 0;
+SensorArray sarray;
+
+int val;
 void setup()
 {
 	Serial.begin(9600);
@@ -7,8 +10,8 @@ void setup()
 
 void loop()
 {
-	val = analogRead(3);
-	Serial.println(val);
-	delay(100);
+	
+	sarray.updateSensors();
+	delay(500);
 	
 }

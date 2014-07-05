@@ -18,11 +18,11 @@ private:
 	
 
 	//Note: These pins are analog pins
-	static const int leftSensorPin = 3;
-	static const int rightSensorPin = 1;
-	static const int middleSensorPin = 2;
+	static const int leftSensorPin = A0;
+	static const int rightSensorPin = A5;
+	static const int middleSensorPin = A4;
 
 	//The level that analog read needs to be above to be considered 'black'
-	static const int acuitiy = 500; //TODO test
+	static const int acuity = 600; //TODO test
 };
 #endif

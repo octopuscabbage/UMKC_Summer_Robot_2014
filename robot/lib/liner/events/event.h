@@ -6,6 +6,7 @@
  * IO features.
  */
 
+#include "IO.h"
 #ifndef EVENT_H
 #define EVENT_H
 
@@ -27,12 +28,9 @@ public:
 		io = io_ptr;
 	}
 	/**
-	 * The does the action that the event represents
+	 * The does the action that the event represents which may return a value.
+	 * 
 	 */
-	virtual void do() = 0;
-	/**
-	 * Gets the result of the action the event represents
-	 */
-	virtual T getResult() = 0;
+	virtual T  do() = 0;
 };
 #endif 	 
