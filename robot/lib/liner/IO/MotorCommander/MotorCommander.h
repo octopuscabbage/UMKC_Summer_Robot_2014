@@ -48,7 +48,7 @@ class MotorCommander{
                 };
 		
 		void stop(){
-			Serial.print("MotorCommander: Stopping.");
+			Serial.println("MotorCommander: Stopping.");
 			left.detach();
 			right.detach();
 			isAttached = false;
