@@ -39,13 +39,13 @@ void MotorCommander::turn(char motorToGoFoward,double mmToTravel){
 	reAttach();
 	switch(motorToGoFoward){
 		case Motors::RIGHT: 
-			right.write(180);
-			left.write(180);
+			right.write(0);
+			left.write(0);
 			waitAndStop(mmToMillis(mmToTravel));
 			break;
 		case Motors::LEFT:
-			right.write(0);
-			left.write(0);
+			right.write(180);
+			left.write(180);
 			waitAndStop(mmToMillis(mmToTravel));
 			break;
 		}
@@ -55,12 +55,12 @@ void MotorCommander::turnSpeed(char motorToGoFoward, int speed){
 	reAttach();
 	switch(motorToGoFoward){
 		case Motors::RIGHT:
-			right.write(180);
-			left.write(180);
-			break;
-		case Motors::LEFT:
 			right.write(0);
 			left.write(0);
+			break;
+		case Motors::LEFT:
+			right.write(180);
+			left.write(180);
 			break;
 	}
 }

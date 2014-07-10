@@ -1,18 +1,25 @@
 #include <Arduino.h>
 #include "eventDispatch.h"
+#include "alignEvent.h"
 void setup();
 void loop();
 #line 1 "src/sketch.ino"
 //#include "eventDispatch.h"
+//#include "alignEvent.h"
 
-eventDispatch dispatch;
+EventDispatch dispatch;
 
 void setup()
 {
+	Serial.begin(9600);
 }
+
 
 void loop()
 {
-	eventDispatch.getEvent(eventDispatch.EventTypes::ALIGN);
+
+	Serial.println("going");
+	dispatch.setAndDoRequestedEvent(EventDispatch::ALIGN);
+	Serial.println("ended");
 	delay(500);
 }

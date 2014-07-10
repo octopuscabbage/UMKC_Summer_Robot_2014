@@ -7,13 +7,14 @@
  */
 
 #include "IO.h"
+
 #ifndef EVENT_H
 #define EVENT_H
 
-template<class T>
 class Event{
 protected:
 	IO* io;
+
 
 public:
 	/**
@@ -28,9 +29,17 @@ public:
 		io = io_ptr;
 	}
 	/**
-	 * The does the action that the event represents which may return a value.
+	 * The does the action that the event represents
 	 * 
 	 */
-	virtual T  do() = 0;
+
+	virtual void operate() = 0;
+
+	//I guess empty event isn't necessary, possibly saves a computation
+	virtual bool isNecessary() {
+		return false;	
+	}
+
 };
+
 #endif 	 

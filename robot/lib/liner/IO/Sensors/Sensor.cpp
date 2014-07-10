@@ -14,7 +14,7 @@ bool Sensor::read(){
 }
 
 void Sensor::debugOutput(int reading){
-	Serial.print("Sensor on pin ");
+	Serial.print("Sensor: Sensor on pin ");
 	Serial.print(SensorPin);
 	Serial.print(" read a value of ");
 	Serial.println(reading);

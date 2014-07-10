@@ -13,4 +13,5 @@ struct IO{
 	MotorCommander motorCommander;
 	SensorArray sensorArray;
 	
-}
+};
+#endif

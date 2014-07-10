@@ -9,6 +9,9 @@
  /usr/share/arduino/hardware/arduino/cores/arduino/Printable.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h \
- lib/liner/eventControllers/eventDispatch.h lib/liner/events/alignEvent.h \
- lib/liner/events/event.h lib/liner/events/normalOperationEvent.h \
- lib/liner/events/event.h
+ lib/liner/eventControllers/eventDispatch.h lib/liner/IO/IO.h \
+ lib/liner/IO/MotorCommander/MotorCommander.h \
+ /usr/share/arduino/libraries/Servo/Servo.h \
+ lib/liner/IO/Sensors/SensorArray.h lib/liner/IO/Sensors/Sensor.h \
+ lib/liner/events/alignEvent.h lib/liner/events/event.h \
+ lib/liner/events/normalOperationEvent.h lib/liner/events/event.h

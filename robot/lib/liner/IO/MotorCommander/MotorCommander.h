@@ -67,14 +67,14 @@ class MotorCommander{
 		void turnRight(double distance){
 			turn(Motors::RIGHT, distance);
 		}
-		void turnRightNB(int angle){
-			turnSpeed(Motors::RIGHT, angle);
+		void turnRightNB(int speed=180){
+			turnSpeed(Motors::RIGHT,speed);
 		}
 		void turnLeft(double distance){
 			turn(Motors::LEFT, distance);
 		}
-		void turnLeftNB(int angle){
-			turnSpeed(Motors::LEFT,angle);
+		void turnLeftNB(int speed=180){
+			turnSpeed(Motors::LEFT,speed);
 		}
 };
 #endif
