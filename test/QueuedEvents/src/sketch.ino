@@ -12,14 +12,6 @@ void loop()
 {
 
 	Serial.println("going");
-	//Make a call to Align Event
-	dispatch.setAndDoRequestedEventIfNecessary(EventDispatch::ALIGN);
-	//Go forward a bit
-	dispatch.setAndDoRequestedEvent(EventDispatch::NORMAL);
-	//Check if a queue evnet is necessary
-	dispatch.setRequestedEvent(EventDispatch::QUEUED);
-	if(dispatch.isRequestedEventNecessary()){
-		dispatch.doRequestedEvent();
-	}
+	dispatch.setAndDoRequestedEvent(EventDispatch::QUEUED);
 	Serial.println("ended");
 }
