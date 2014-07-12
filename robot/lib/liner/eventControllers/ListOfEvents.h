@@ -1,17 +1,26 @@
 
 /*
- * List of events to perform
+ * List of events to perform, for numbered amounts it only goes up to 9, just call it twice
  * Q 		= End event
- * T R 1  	= Turn right 1 CM
- * T L 1 	= Turn left 1 CM
- * F 1 		= Forward 1 CM
+ * TR1  	= Turn right 1 CM
+ * TL1 		= Turn left 1 CM
+ * F1 		= Forward 1 CM
  * A 		= Align
- * T 		= Box event (Go in, light up, turn around)
+ * B 		= Box event (Go in, light up, turn around)
+ * * 		= End of Events
+ *
  */
 
-String geventListings = "F 1" //First Event
-"T R 1"
-"T L 1"
-"A"
-"T"
+String eventListing[] = {"F1", //First Eventi
+"TR1",
+"TL1",
+"A",
+"B",
+"Q",
+"F5",
+"A",
+"F5",
+"Q",
+"*"
+};
 

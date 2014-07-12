@@ -28,11 +28,11 @@ public:
 	virtual void init(IO* io_ptr){
 		io = io_ptr;
 	}
+
 	/**
 	 * The does the action that the event represents
 	 * 
 	 */
-
 	virtual void operate() = 0;
 
 	//I guess empty event isn't necessary, possibly saves a computation
