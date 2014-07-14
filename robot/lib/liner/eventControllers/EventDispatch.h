@@ -3,6 +3,7 @@
 #include "NormalOperationEvent.h"
 #include "QueuedEvent.h"
 #include "Event.h"
+#include "Arduino.h"
 
 #ifndef EVENT_DISPATCH_H 
 #define EVENT_DISPATCH_H 
@@ -26,6 +27,10 @@ public:
 	};
 	
 	void setRequestedEvent(EventTypes eventType){
+
+		Serial.print("EventQueue: Setting a new event type ");
+		Serial.println(eventType);
+		
 		delete requestedEvent;
 		requestedEvent = NULL;
 		switch(eventType){
@@ -43,7 +48,10 @@ public:
 		
 	}
 	void doRequestedEvent(){
+
+		Serial.println("EventQueue: Doing requested event");
 		requestedEvent->operate();
+
 	}
 	void setAndDoRequestedEvent(EventTypes eventType){
 		setRequestedEvent(eventType);

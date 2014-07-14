@@ -1,4 +1,5 @@
 #include "Event.h" 
+#include "Arduino.h"
 #ifndef NORMAL_OPERATION_EVENT_H
 #define NORMAL_OPERATION_EVENT_H
 
@@ -8,6 +9,9 @@ public:
 		return true;
 	}
 	virtual void operate(){
+
+		Serial.println("NormalOperationEvent: Going forward.");	
+
 		io->motorCommander.goDistance(10);
 	}
 
