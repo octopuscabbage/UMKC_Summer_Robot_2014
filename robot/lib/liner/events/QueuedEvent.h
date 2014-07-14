@@ -23,31 +23,15 @@ class QueuedEvent : public SensedEvent{
 				while(currentChar != 'Q'){
 					switch(currentChar){
 						case 'F':
-							Serial.println("QueuedEvent: Going forward...");
-							io->motorCommander.goDistance(charToIntOver10(eventListing[pos][1]));
+							goForward(eventListing[pos]);
 							break;
 						case 'T':
-							Serial.print("QueuedEvent: Turning ");
-							switch(eventListing[pos][1]){
-								case 'R':
-									Serial.println(" right.");
-									io->motorCommander.turnRight(charToIntOver10(eventListing[pos][2]));
-									break;
-								case 'L':
-									Serial.println(" left.");
-									io->motorCommander.turnLeft(charToIntOver10(eventListing[pos][2]));
-									break;
-							}
+							turn(eventListing[pos]);
 							break;
-						case 'A':{
-							Serial.println("QueuedEvent: Aligning");
-							AlignEvent align;
-							align.init(io);
-							align.operate();
+						case 'A':
+							align();
 							break;
-						}
 						case 'B':
-							Serial.println("QueuedEvent: Doing box animation");
 							doBoxAnimation();
 							break;
 					}	
@@ -61,7 +45,44 @@ class QueuedEvent : public SensedEvent{
 
 										
 	private:
+		void align(){
+			Serial.println("QueuedEvent: Aligning");
+			AlignEvent align;
+			align.init(io);
+			align.operate();
+
+		}
+		void turn(String& currentString){
+			Serial.print("QueuedEvent: turning");
+			int distance = atoi(currentString.substring(2).c_str());
+			switch(eventListing[pos][1]){
+				case 'R':
+
+					Serial.print(" right for a distance ");
+					Serial.println(distance);
+
+					io->motorCommander.turnRight(distance);
+					break;
+				case 'L':
+
+					Serial.print(" left for a distance ");
+					Serial.println(distance);
+
+					io->motorCommander.turnLeft(distance);
+					break;
+					}
+		}
+
+		void goForward(String& currentString){
+			Serial.println("QueuedEvent: Going forward ");
+			int distance = atoi(currentString.substring(1).c_str());
+			Serial.print(distance);
+			
+			io->motorCommander.goDistance(distance);
+		}
+			
 		void doBoxAnimation(){
+			Serial.println("QueuedEvent: Doing box animation");
 			return;
 		}	
 		int charToIntOver10(char toConvert){
