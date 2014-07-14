@@ -12,12 +12,10 @@ class EventDispatch{
 private:
 	IO* io;
 	Event* requestedEvent;
-	QueuedEvent qevent;
 public:
 	EventDispatch(){
 		io = new IO;
-		qevent.pos = 0;
-		qevent.init(io);
+		int QueuedEvent::pos = 0;
 	}
 	enum EventTypes{
 		ALIGN,
@@ -36,7 +34,7 @@ public:
 				requestedEvent = new NormalOperationEvent;
 				break;
 			case QUEUED:
-				requestedEvent = NULL;
+				requestedEvent = new QueuedEvent;
 				break;
 		}
 		if(requestedEvent != NULL) requestedEvent->init(io);
