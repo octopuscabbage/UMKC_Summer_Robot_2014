@@ -8,6 +8,9 @@
 #define EVENT_DISPATCH_H 
 
 
+//This is needed to set the queued event
+int QueuedEvent::pos = 0;
+
 class EventDispatch{
 private:
 	IO* io;
@@ -15,7 +18,6 @@ private:
 public:
 	EventDispatch(){
 		io = new IO;
-		int QueuedEvent::pos = 0;
 	}
 	enum EventTypes{
 		ALIGN,
@@ -37,14 +39,11 @@ public:
 				requestedEvent = new QueuedEvent;
 				break;
 		}
-		if(requestedEvent != NULL) requestedEvent->init(io);
+		requestedEvent->init(io);
 		
 	}
 	void doRequestedEvent(){
-		if(requestedEvent != NULL) 
-			requestedEvent->operate();
-		else 
-			qevent.operate();
+		requestedEvent->operate();
 	}
 	void setAndDoRequestedEvent(EventTypes eventType){
 		setRequestedEvent(eventType);

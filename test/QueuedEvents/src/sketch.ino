@@ -11,7 +11,6 @@ void setup()
 void loop()
 {
 
-	Serial.println("going");
 	dispatch.setAndDoRequestedEvent(EventDispatch::QUEUED);
-	Serial.println("ended");
+	dispatch.setAndDoRequestedEvent(EventDispatch::QUEUED);
 }

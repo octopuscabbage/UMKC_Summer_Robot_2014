@@ -8,14 +8,16 @@
 
 class QueuedEvent : public SensedEvent{
 	public:
-		int pos;
+		static int pos;
 		virtual bool isNecessary(){
 			updateSensors();
-			Serial.print("Queued Event: Queued Event is ");
+			Serial.print("QueuedEvent: Queued Event is ");
 			Serial.println(((middleSensor && leftSensor) || (middleSensor && rightSensor) || (middleSensor && leftSensor && rightSensor)));
 			return ((middleSensor && leftSensor) || (middleSensor && rightSensor) || (middleSensor && leftSensor && rightSensor));
 		}
 		virtual void operate(){
+				Serial.print("QueuedEvent: Doing operation ");
+				Serial.println(pos);
 				char currentChar = eventListing[pos][0];
 				if(currentChar == '*') return;
 				while(currentChar != 'Q'){
@@ -51,6 +53,10 @@ class QueuedEvent : public SensedEvent{
 					}	
 				currentChar = eventListing[++pos][0];
 				}
+				++pos;
+		}
+		static void resetPos(){
+			pos = 0;
 		}
 
 										

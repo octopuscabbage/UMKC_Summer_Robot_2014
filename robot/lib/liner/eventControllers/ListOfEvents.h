@@ -13,13 +13,11 @@
 
 String eventListing[] = {"F1", //First Eventi
 "TR1",
-"TL1",
-"A",
-"B",
 "Q",
+"F5", //second event
 "F5",
-"A",
 "F5",
+"TL1",
 "Q",
 "*"
 };
