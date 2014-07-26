@@ -16,9 +16,12 @@ class EventDispatch{
 private:
 	IO* io;
 	Event* requestedEvent;
+
+
 public:
 	EventDispatch(){
 		io = new IO;
+		io->motorCommander.stop();
 	}
 	enum EventTypes{
 		ALIGN,
@@ -29,8 +32,8 @@ public:
 	void setRequestedEvent(EventTypes eventType){
 
 		Serial.print("EventQueue: Setting a new event type ");
-		Serial.println(eventType);
-		
+		printEventType(eventType);
+		Serial.println();
 		delete requestedEvent;
 		requestedEvent = NULL;
 		switch(eventType){
@@ -65,6 +68,19 @@ public:
 	}
 	bool isRequestedEventNecessary(){
 		return requestedEvent->isNecessary();
+	}
+	void printEventType(EventTypes e){
+		switch(e){
+			case ALIGN:
+				Serial.print("ALIGN");
+				break;
+			case NORMAL:
+				Serial.print("NORMAL");
+				break;
+			case QUEUED:
+				Serial.print("QUEUED");
+				break;
+		}
 	}
 };
 

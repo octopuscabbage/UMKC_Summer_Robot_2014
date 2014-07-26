@@ -28,6 +28,10 @@ class AlignEvent : public SensedEvent{
 			Serial.print(" Middle Sensor - ");
 			Serial.println(middleSensor);
 
+			if(rightSensor) io->motorCommander.turnLeft(random(101) / 100);
+			if(leftSensor) 	io->motorCommander.turnRight(random(101)/ 100);
+
+/*
 			while(isNecessary()){
 				Serial.println("AlignEvent: Iterating again...");
 
@@ -36,7 +40,7 @@ class AlignEvent : public SensedEvent{
 				updateSensors();
 			}
 
-
+		*/
 		}
 
 

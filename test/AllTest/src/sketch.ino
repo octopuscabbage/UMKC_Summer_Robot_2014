@@ -13,7 +13,6 @@ void loop()
 {
 
 	Serial.println("going");
-	dispatch.setAndDoRequestedEventIfNecessary(EventDispatch::ALIGN);
 	dispatch.setRequestedEvent(EventDispatch::QUEUED);
 	if(dispatch.isRequestedEventNecessary()){
 		dispatch.doRequestedEvent();
@@ -21,5 +20,6 @@ void loop()
 	else{
 		dispatch.setAndDoRequestedEvent(EventDispatch::NORMAL);
 	}
+	dispatch.setAndDoRequestedEventIfNecessary(EventDispatch::ALIGN);
 	Serial.println("ended");
 }

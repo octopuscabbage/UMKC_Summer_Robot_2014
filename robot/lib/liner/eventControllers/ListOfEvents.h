@@ -1,6 +1,6 @@
 
 /*
- * List of events to perform, for numbered amounts it only goes up to 9, just call it twice
+ * List of events to perform
  * Q 		= End event
  * TR1  	= Turn right 1 CM
  * TL1 		= Turn left 1 CM
@@ -11,13 +11,9 @@
  *
  */
 
-String eventListing[] = {"F1", //First Eventi
-"TR1",
+String eventListing[] = {"F1", //First Event
 "Q",
-"F5", //second event
-"F5",
-"F5",
-"TL1",
+"TR1",
 "Q",
 "*"
 };
